@@ -12,7 +12,20 @@ public class ReadFour
      */
         public static void main(String[] args)
         {
-            // Print out a running total of all the
-            // values in the input file.
+            try {
+                Scanner fileIn = new Scanner(new File("input.txt"));
+                int sum = 0;
+                while (fileIn.hasNext()) {
+                    String lineIn = fileIn.nextLine();
+                    sum += Integer.parseInt(lineIn);
+                    System.out.println(sum);
+
+                    // Print out a running total of all the
+                    // values in the input file.
+                }
+            }
+            catch (IOException e) {
+                System.out.println("ERROR ERROR");
+            }
         }
 }
